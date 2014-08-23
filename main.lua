@@ -3,9 +3,7 @@ require('src.loader')
 AsteroidSpawner = require('src.spawners.asteroid_spawner')
 
 function love.load()
-    love.physics.setMeter(1)
-    world = love.physics.newWorld(0, 0, true)
-
+    world = require('src.physics')
     asteroid_spawner = AsteroidSpawner(world)
 
     layers = {
@@ -18,6 +16,7 @@ function love.load()
 end
 
 function love.update(dt)
+    world:update(dt)
     asteroid_spawner:spawn()
     asteroid_spawner:update(dt)
 end

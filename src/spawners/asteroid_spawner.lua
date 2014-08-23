@@ -9,8 +9,14 @@ function AsteroidSpawner:init(world)
 end
 
 function AsteroidSpawner:spawn()
-    if #self.asteroids < 100 then
-        self.asteroids[#self.asteroids+1] = Asteroid(400, 400, math.random()*math.pi*2, 0.5)
+    if #self.asteroids < 12 then
+        local ast = Asteroid(
+            world,
+            100*#self.asteroids,
+            400,
+            love.math.random()*math.pi*2,
+            10)
+        self.asteroids[#self.asteroids+1] = ast
     end
 end
 
