@@ -13,7 +13,7 @@ function AsteroidSpawner:spawn()
         local ast = Asteroid(
             world,
             100*#self.asteroids,
-            400,
+            5*#self.asteroids,
             love.math.random()*math.pi*2,
             10)
         self.asteroids[#self.asteroids+1] = ast
