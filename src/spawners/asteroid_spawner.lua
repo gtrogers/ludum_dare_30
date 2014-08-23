@@ -11,7 +11,7 @@ end
 function AsteroidSpawner:spawn()
     if #self.asteroids < 12 then
         local ast = Asteroid(
-            world,
+            self.world,
             100*#self.asteroids,
             5*#self.asteroids,
             love.math.random()*math.pi*2,

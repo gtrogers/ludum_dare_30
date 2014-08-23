@@ -28,6 +28,10 @@ function ColonyShip:world_coords()
     return self.p.body:getWorldCenter()
 end
 
+function ColonyShip:velocity()
+    return self.p.body:getLinearVelocity()
+end
+
 function ColonyShip:angle()
     return self.p.body:getAngle()
 end

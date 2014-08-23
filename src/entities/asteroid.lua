@@ -37,7 +37,7 @@ end
 function Asteroid:update(dt)
     local vx, vy = self.p.body:getLinearVelocity()
     local vChange = self.speed*self.speed - (vx*vx + vy*vy)
-    self.p.body:applyLinearImpulse(math.sin(self.rot)*vChange, math.cos(self.rot)*vChange)
+    self.p.body:applyLinearImpulse(math.cos(self.rot)*vChange, math.sin(self.rot)*vChange)
 end
 
 function Asteroid:collision()
