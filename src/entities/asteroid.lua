@@ -6,6 +6,7 @@ function Asteroid:init(x, y, r, s)
     self.y = y
     self.rot = r
     self.speed = s
+    self.color = {255, 125, 50}
     self.verts = {}
 
     local corners = math.random(5,16)
@@ -21,11 +22,11 @@ end
 
 function Asteroid:draw(g)
     g.push()
-    local foo = {255,125,50}
-    g.setColor(foo)
+    g.setColor(self.color)
     g.translate(self.x, self.y)
     g.setLineStyle('rough')
     g.polygon('line', self.verts)
+    g.setColor(255, 255, 255)
     g.pop()
 end
 
